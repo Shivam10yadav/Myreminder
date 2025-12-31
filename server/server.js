@@ -15,8 +15,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     origin: [
-      "http://localhost:5173",                 // local frontend
-      "https://myreminder-iota.vercel.app/" // CHANGE after frontend deploy
+      "http://localhost:5173",
+      "https://myreminder-iota.vercel.app" // Removed trailing slash
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
