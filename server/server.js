@@ -14,11 +14,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "*",
-    methods: ["GET", "POST", "DELETE", "PUT"],
+    origin: [
+      "http://localhost:5173",                 // local frontend
+      "https://myreminder-iota.vercel.app/" // CHANGE after frontend deploy
+    ],
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+
 
 // Routes
 app.use("/api/v1", ReminderRoute);
